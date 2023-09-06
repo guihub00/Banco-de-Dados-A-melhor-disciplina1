@@ -28,3 +28,8 @@ from autores
 left join livros on autores.id = livros.autor_id
 group by autores.id;
 
+exercício 7
+select curso, count(aluno_id) as numero_de_alunos
+from matriculas
+group by curso;
+
