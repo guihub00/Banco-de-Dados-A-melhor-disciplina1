@@ -140,4 +140,32 @@ END;
 //
 DELIMITER ;
 
+Exercício 8
+
+DELIMITER //
+CREATE PROCEDURE sp_AutorMaisAntigo(OUT autorMaisAntigoNome VARCHAR(255))
+BEGIN
+    SELECT CONCAT(Nome, ' ', Sobrenome) INTO autorMaisAntigoNome
+    FROM Autor
+    WHERE Data_Nascimento = (
+        SELECT MIN(Data_Nascimento)
+        FROM Autor
+    );
+END;
+//
+DELIMITER ;
+
+Exercício 9
+
+DELIMITER //
+CREATE PROCEDURE sp_TitulosPorCategoria(IN categoriaNome VARCHAR(100))
+BEGIN
+    SELECT Livro.Titulo
+    FROM Livro
+    INNER JOIN Categoria ON Livro.Categoria_ID = Categoria.Categoria_ID
+    WHERE Categoria.Nome = categoriaNome;
+END;
+//
+DELIMITER ;
+
 
