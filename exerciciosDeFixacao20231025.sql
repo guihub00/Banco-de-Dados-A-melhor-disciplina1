@@ -47,3 +47,6 @@ $$
 
 delimiter ;
 
+exerc 5 
+
+Esse eu n sei fazer :(
